@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E700EA02227D6C4200FA2017 /* SettingCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700EA01227D6C4200FA2017 /* SettingCtrl.swift */; };
 		E7021E752279D61600306CFC /* UIColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7021E742279D61600306CFC /* UIColorSet.swift */; };
 		E7E98FFF22773FDC00F65613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E98FFE22773FDC00F65613 /* AppDelegate.swift */; };
 		E7E9900422773FDC00F65613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E9900222773FDC00F65613 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E700EA01227D6C4200FA2017 /* SettingCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCtrl.swift; sourceTree = "<group>"; };
 		E7021E742279D61600306CFC /* UIColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorSet.swift; sourceTree = "<group>"; };
 		E7E98FFB22773FDC00F65613 /* SideMenuTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenuTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E98FFE22773FDC00F65613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				E7E990142277C8F300F65613 /* ContainerCtrl.swift */,
 				E7E990162277C90300F65613 /* HomeCtrl.swift */,
 				E7E990182277C91100F65613 /* MenuCtrl.swift */,
+				E700EA01227D6C4200FA2017 /* SettingCtrl.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				E7E990152277C8F300F65613 /* ContainerCtrl.swift in Sources */,
 				E7E990212278C9EE00F65613 /* MenuOption.swift in Sources */,
 				E7E990192277C91100F65613 /* MenuCtrl.swift in Sources */,
+				E700EA02227D6C4200FA2017 /* SettingCtrl.swift in Sources */,
 				E7021E752279D61600306CFC /* UIColorSet.swift in Sources */,
 				E7E9901F22787C0600F65613 /* MenuOptionsCell.swift in Sources */,
 				E7E98FFF22773FDC00F65613 /* AppDelegate.swift in Sources */,

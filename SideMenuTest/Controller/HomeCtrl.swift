@@ -17,7 +17,6 @@ class HomeCtrl: UIViewController {
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("6 HomeCtrl.viewDidLoad")
         view.backgroundColor = UIColor(hex: "B1C7D4")
         configureNavigationBar()
         
@@ -29,12 +28,11 @@ class HomeCtrl: UIViewController {
     
         //Sidemenuボタンをタッチしたら呼び出し
     @objc func handleToggle() {
-        print("*****Touch Toggle*****")
         delegate?.handMenuToggle(forMenuOption: nil)
-        print("**********************")
     }
     
     
+        //NavigationBarについて
     func configureNavigationBar() {
         //NavigationBarの色とスタイルを定義
         navigationController?.navigationBar.barTintColor = UIColor(hex: "1D4B69")

@@ -19,8 +19,7 @@ class MenuCtrl: UIViewController {
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("     MenuCtrl.viewDidLoad")
+
         configureTableView()
     }
     
@@ -78,9 +77,7 @@ extension MenuCtrl: UITableViewDelegate, UITableViewDataSource {
         
         //行数をMenuOptionに渡して項目名とアイコンを取得
         let menuOption = MenuOption(rawValue: indexPath.row)
-        print("******Touch Menu contents - >Go delegate******")
         delegate?.handMenuToggle(forMenuOption: menuOption)
-        print("***********************")
         
         guard let text = menuOption?.description else { return }
         print("\(text)が選択されました")

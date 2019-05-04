@@ -21,9 +21,7 @@ class ContainerCtrl: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("1. ContainerCtrl.viewDidLoad")
         configureHomeCtrl()
-        print("5. (end)ContainerCtrl.viewDidLoad")
         
     }
     
@@ -44,7 +42,6 @@ class ContainerCtrl: UIViewController {
     
     func configureHomeCtrl() {
         //Homeコントローラをインスタンス化
-        print("2. ContainerCtrl.configureHomeCtrl")
         let homeController  = HomeCtrl()
         homeController.delegate = self
         
@@ -52,9 +49,7 @@ class ContainerCtrl: UIViewController {
         centerController = UINavigationController(rootViewController: homeController)
         
         //Home画面を表示
-        print("3. ContainerCtrl.addSubView(centerController)")
         view.addSubview(centerController.view)
-        print("4. (end)ContainerCtrl.addSubView(centerController)")
         addChild(centerController)
         centerController.didMove(toParent: self)
         
@@ -62,19 +57,15 @@ class ContainerCtrl: UIViewController {
     
         //SideMenuボタン押下時にメニューの種類を設定する処理（Hideするときは処理しない）
     func configureMenuCtrl() {
-        print("start configureCtrl")
         if menuController == nil {
-            print("MenuCtrl == nil -> add menu controller")
             //MenuCtrl.swiftに記載したViewの内容を表示する
             menuController = MenuCtrl()
             menuController.delegate = self
             
-            print("view.insertview menuController")
             view.insertSubview(menuController.view, at: 0)
             addChild(menuController)
             menuController.didMove(toParent: self)
-            
-            print("Did add menu controller")
+
         }
     }
     
@@ -85,7 +76,6 @@ class ContainerCtrl: UIViewController {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0,
                            options: .curveEaseInOut, animations: {
                             self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
-                            print("show Sidemenu")
                             
             }, completion: nil)
         }else {
@@ -93,7 +83,6 @@ class ContainerCtrl: UIViewController {
                            options: .curveEaseInOut, animations: {
                             
                 self.centerController.view.frame.origin.x = 0
-                print("\nHide Sidemenu")
                             
             }) { (_) in
                 //どのコンテンツを選択したか出力する処理へ
@@ -116,6 +105,8 @@ class ContainerCtrl: UIViewController {
         case .Notification:
             print("Show Notification")
         case .Setting:
+            let controller = SettingCtrl()
+            present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
             print("Show Setting")
         }
     }
@@ -124,8 +115,6 @@ class ContainerCtrl: UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0,
                        options: .curveEaseInOut, animations: {
                         self.setNeedsStatusBarAppearanceUpdate()
-                        print("Update StatusBar")
-                        
         }, completion: nil)
     }
 }
@@ -136,15 +125,12 @@ extension ContainerCtrl: HomeControllerDelegate {
     func handMenuToggle(forMenuOption menuOption: MenuOption?) {
         //isExpandedがfalseの場合（Sidemenuトグルをタップした場合）
         if !isExpanded {
-            print("メニュートグル")
-            
             //menuコンテンツを表示する処理へ
             configureMenuCtrl()
             
         }
         isExpanded = !isExpanded
 
-        print("start animePanel")
         animatePanel(shouldExpand: isExpanded, menuOption: menuOption)
     }
 
